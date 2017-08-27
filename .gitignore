@@ -1,0 +1,14 @@
+vuls
+.vscode
+*.txt
+*.sqlite3*
+*.db
+tags
+.gitmodules
+coverage.out
+issues/
+vendor/
+log/
+results/
+*config.toml
+!setup/docker/*
