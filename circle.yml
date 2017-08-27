@@ -3,6 +3,8 @@ machine:
     - docker
 
 dependencies:
+  pre:
+    - sudo pip install awscli
   override:
     - docker info
     - docker build -t vuls/go-cve-dictionary ./setup/docker/go-cve-dictionary/latest
@@ -10,4 +12,5 @@ dependencies:
 
 test:
   override:
-    - docker run --rm vuls/go-cve-dictionary -v
+    # circleで、コンテナを消せないので--rmはつけない
+    - docker run vuls/go-cve-dictionary -v
