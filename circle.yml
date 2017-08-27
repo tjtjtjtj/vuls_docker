@@ -6,7 +6,8 @@ dependencies:
   override:
     - docker info
     - docker build -t vuls/go-cve-dictionary ./setup/docker/go-cve-dictionary/latest
+    - docker images
 
 test:
   override:
-    - docker run --rm vuls/goval-dictionary -v
+    - docker run --rm vuls/go-cve-dictionary -v
