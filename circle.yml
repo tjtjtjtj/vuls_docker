@@ -9,7 +9,9 @@ dependencies:
     - docker info
     - docker build -t vuls/go-cve-dictionary ./setup/docker/go-cve-dictionary/latest
     - docker images
-    - aws ecr get-login --region us-east-1
+    - aws ecr get-login --region us-east-1 | sh
+    - docker tag vuls/go-cve-dictionary:latest 171873592871.dkr.ecr.us-east-1.amazonaws.com/vuls/go-cve-dictionary:latest
+    - docker push 171873592871.dkr.ecr.us-east-1.amazonaws.com/vuls/go-cve-dictionary:latest
 
 test:
   override:
